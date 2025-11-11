@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PROJECTS, ICONS } from '../constants';
 import { Project } from '../types';
@@ -11,7 +10,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <div className="z-10 sm:order-2 sm:col-span-6">
           <h3>
             <a
-              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-orange-500 focus-visible:text-orange-500 group/link text-base"
               href={project.liveUrl || project.githubUrl || '#'}
               target="_blank"
               rel="noreferrer noopener"
@@ -25,7 +24,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
             {project.tags.map((tag) => (
               <li key={tag} className="mr-1.5 mt-2">
-                <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">{tag}</div>
+                <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-400 ">{tag}</div>
               </li>
             ))}
           </ul>
@@ -48,9 +47,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
+    <section id="projects" className="py-16 md:py-24 scroll-mt-16" aria-label="Selected projects">
+       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 sm:mx-auto sm:w-full sm:px-0 sm:py-0 sm:opacity-0">
+        <h2 className="text-2xl font-bold text-slate-100">Projects</h2>
       </div>
       <div>
         <ul className="group/list">

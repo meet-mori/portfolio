@@ -1,33 +1,18 @@
-
 import React from 'react';
-import { PERSONAL_INFO, ICONS } from '../constants';
+import { PERSONAL_INFO } from '../constants';
 
 const Header: React.FC = () => {
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-          <a href="/">{PERSONAL_INFO.name}</a>
-        </h1>
-        <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-          {PERSONAL_INFO.title}
-        </h2>
-        <p className="mt-4 max-w-xs leading-normal">
-          {PERSONAL_INFO.bio}
-        </p>
-        <nav className="nav hidden lg:block" aria-label="In-page jump links">
-          <ul className="mt-16 w-max">
-            <li><a className="group flex items-center py-3 active" href="#about"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a></li>
-            <li><a className="group flex items-center py-3" href="#skills"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Skills</span></a></li>
-            <li><a className="group flex items-center py-3" href="#projects"><span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Projects</span></a></li>
-          </ul>
+    <header className="container mx-auto px-6 md:px-12 py-6">
+      <div className="flex justify-between items-center">
+        <a href="/" className="text-xl font-bold text-slate-100 hover:text-orange-500 transition-colors">{PERSONAL_INFO.name}</a>
+        <nav className="hidden md:flex items-center space-x-8">
+          <a href="#about" className="text-slate-400 hover:text-orange-500 transition-colors pb-1 border-b-2 border-transparent hover:border-orange-500">About</a>
+          <a href="#skills" className="text-slate-400 hover:text-orange-500 transition-colors pb-1 border-b-2 border-transparent hover:border-orange-500">Skills</a>
+          <a href="#projects" className="text-slate-400 hover:text-orange-500 transition-colors pb-1 border-b-2 border-transparent hover:border-orange-500">Projects</a>
+          <a href="#contact" className="text-slate-400 hover:text-orange-500 transition-colors pb-1 border-b-2 border-transparent hover:border-orange-500">Contact</a>
         </nav>
       </div>
-      <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
-        <li className="mr-5 text-xs shrink-0"><a className="block hover:text-slate-200" href={PERSONAL_INFO.socials.find(s => s.name === 'GitHub')?.url} target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)">{ICONS.github}</a></li>
-        <li className="mr-5 text-xs shrink-0"><a className="block hover:text-slate-200" href={PERSONAL_INFO.socials.find(s => s.name === 'LinkedIn')?.url} target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)">{ICONS.linkedin}</a></li>
-        <li className="mr-5 text-xs shrink-0"><a className="block hover:text-slate-200" href={PERSONAL_INFO.socials.find(s => s.name === 'Twitter')?.url} target="_blank" rel="noreferrer noopener" aria-label="Twitter (opens in a new tab)">{ICONS.twitter}</a></li>
-      </ul>
     </header>
   );
 };

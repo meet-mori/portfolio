@@ -1,34 +1,22 @@
-
 import React from 'react';
-import { SKILLS } from '../constants';
-import { Skill } from '../types';
-
-const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => (
-  <li className="mb-2">
-    <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-      {skill.icon}
-      {skill.name}
-    </div>
-  </li>
-);
+import { SKILLS_DATA } from '../constants';
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Skills">
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Skills</h2>
+    <section id="skills" className="py-16 md:py-24 scroll-mt-16" aria-label="My tech stack">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-slate-100 mb-4">My Tech Stack</h2>
+        <p className="max-w-2xl mx-auto text-slate-400 mb-12">
+          A collection of the primary technologies and tools I use in my day-to-day development.
+        </p>
       </div>
-      <div>
-        <h3 className="text-lg font-bold text-slate-200 mb-4">Technologies I've been working with:</h3>
-        <ul className="flex flex-wrap" aria-label="Technologies used">
-          {SKILLS.map((skill) => (
-            <li key={skill.name} className="mr-1.5 mt-2">
-              <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
-                {skill.name}
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
+        {SKILLS_DATA.map((skill) => (
+          <div key={skill.name} className="group flex flex-col items-center justify-center p-4 rounded-lg bg-slate-800/30 transition-all duration-300 border-b-2 border-transparent hover:border-orange-500 hover:bg-slate-800/60 hover:scale-105">
+            {skill.icon}
+            <p className="text-md font-semibold text-slate-300 group-hover:text-white transition-colors">{skill.name}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
